@@ -17,6 +17,9 @@ public class Lemiesz_Shrimpton_Lab1_Grocery_Sorter {
 		int itemCount = 1;
 		int totalWeight = 0;
 		int totalItems = 0;
+		boolean sturdy;
+		boolean fragile;
+		
 		Scanner input = new Scanner(System.in);
 		
 		System.out.print("How many items?: ");
@@ -37,11 +40,12 @@ public class Lemiesz_Shrimpton_Lab1_Grocery_Sorter {
 			int Weight = input.nextInt();
 			totalWeight += Weight;
 			
+			
+			
 			//Asks user for size of item
 			System.out.print("List size (small/medium/large): " );
 			String answer = input.next();
 			String Size = checkSize(answer);
-			
 			//Asks user if item is raw meat
 			//System.out.print("Is the item raw meat?: ");
 			//String answer = input.next();
@@ -49,17 +53,29 @@ public class Lemiesz_Shrimpton_Lab1_Grocery_Sorter {
 			//if (raw == true) {
 			
 			
+			
 			//Asks user if item is sturdy (boxes, cans,etc.)
 			System.out.print("Is the item sturdy?: " );
 			answer = input.next();
-			boolean sturdy = checkBool(answer);
+			sturdy = checkBool(answer);
+			
+			
 			
 			if (!sturdy) {
 				//Asks user if item is fragile (produce, meats, etc.)
 				System.out.print("Is the item fragile?: " );
 				answer = input.next();
-				boolean fragile = checkBool(answer);	
+				fragile = checkBool(answer);	
 			}
+			else {
+				fragile = false;
+			}
+			
+			Grocery_Item item = new Grocery_Item(Weight, Size, sturdy, fragile);
+			
+			
+			LinkedBag<Object> bag = new LinkedBag<>(); 
+			
 			
 			System.out.println("");
 			itemCount++;
