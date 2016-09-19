@@ -6,12 +6,19 @@ class Grocery_Item {
 	String size;
 	boolean sturdy;
 	boolean fragile;
+	
+	public Grocery_Item() {
+		weight = 0;
+		size = "large";
+		sturdy = false;
+		fragile = false;
+	}
 
 	public Grocery_Item(int w, String sz, boolean st, boolean fr){
-		int weight = w;
-		String size = sz;
-		boolean sturdy = st;
-		boolean fragile = fr;
+		weight = w;
+		size = sz;
+		sturdy = st;
+		fragile = fr;
 	}
 
 	
@@ -19,7 +26,7 @@ class Grocery_Item {
 	private void setWeight(int w){
 		weight = w;
 	}
-	private int getWeight(){
+	public int getWeight(){
 		return weight;
 	}
 	
@@ -28,7 +35,7 @@ class Grocery_Item {
 	private void setSize(String s){
 		size = s;
 	}
-	private String getSize(){
+	public String getSize(){
 		return size;
 	}
 	
@@ -37,7 +44,7 @@ class Grocery_Item {
 	private void setSturdy(boolean s){
 		sturdy = s;
 	}
-	private boolean getSturdy(){
+	public boolean getSturdy(){
 		return sturdy;
 	}
 	
@@ -46,7 +53,7 @@ class Grocery_Item {
 	private void setFragile(boolean f){
 		fragile = f;
 	}
-	private boolean getFragile(){
+	public boolean getFragile(){
 		return fragile;
 	}
 	
